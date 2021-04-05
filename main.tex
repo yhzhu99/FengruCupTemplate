@@ -1,0 +1,121 @@
+% !Mode:: "TeX:UTF-8"
+
+% 定义编译方式 dvipdfmx 或者 pdflatex，默认为 dvipdfmx
+% 方式编译，如果需要修改，只需改变花括号中的内容即可。
+
+\def\usewhat{pdflatex}
+
+% book作为文档类
+% 插入空白页可以设置openright
+\documentclass[12pt,openany,oneside]{book}
+
+% 定义本文所使用宏包
+\input{setup/package}
+
+% 定义所有的.eps/.pdf图片文件在figures子目录下
+\graphicspath{{figures/}}
+
+\begin{document}
+
+% 开始中文字体使用
+\begin{CJK*}{UTF8}{song}
+
+% 完成对论文各个部分格式的设置
+\input{setup/format}     
+
+% ——————————————————————————————————————————————
+% 以下是论文导言部分，包括论文的封面，中英文摘要和中文目录
+
+\frontmatter
+\fancypagestyle{plain}{
+\fancyhf{}
+\renewcommand{\headrulewidth}{0 pt}
+
+\fancyfoot[C]{\xiaowu\thepage}
+}
+
+%%%%%%%%%%   封面   %%%%%%%%%%
+
+\input{preface/cover}
+
+%%%%%%%%%%   目录   %%%%%%%%%%
+\defaultfont
+%\clearpage{\pagestyle{empty}\cleardoublepage}
+\clearpage
+%\pagestyle{empty}
+%\setcounter{page}{1}                                 % 单独从 1 开始编页码
+%\pagenumbering{arabic}
+\titleformat{\chapter}{\centering\sanhao\hei}{\chaptername}{2em}{} % 设置目录两字的格式
+
+\tableofcontents                                     % 中文目录
+
+
+\thispagestyle{plain}
+
+% ——————————————————————————————————————————————
+% 以下是论文正文，内容在body子文件夹下
+
+\mainmatter\defaultfont\sloppy\raggedbottom
+\makeatletter
+	\fancypagestyle{plain}{                              % 设置开章页眉页脚风格
+		\fancyhf{}
+		\fancyhead[C]{\song\wuhao \@cheading}            % 首页页眉格式
+		\fancyfoot[C]{\song\xiaowu ~\thepage~}           % 首页页脚格式
+		\renewcommand{\headrulewidth}{0.5pt}
+		\renewcommand{\footrulewidth}{0pt}}
+\makeatother
+
+
+% 单独从 1 开始编页码
+\setcounter{page}{1}
+% chapter标题格式：三号，黑体，左对齐
+\titleformat{\chapter}{\centering\sanhao\hei}{\chaptername}{2em}{}
+
+%%%%%%%%%%   正文   %%%%%%%%%%
+
+\include{body/review}
+
+%%%%%%%%%%  参考文献  %%%%%%%%%%
+% \lhead{}
+% \rhead{}
+% \chead{\song\wuhao 北京航空航天大学第三十一届“冯如杯”学生学术科技作品竞赛参赛作品} % 覆盖设置页眉内容
+% \defaultfont
+\bibliographystyle{references/FengrubeiStyle}
+%\phantomsection
+\markboth{参考文献}{参考文献}
+\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
+
+
+\nocite{*}                                     
+% 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中
+
+%启用此命令：使用.bib文件作为文献来源
+\bibliography{references/thesis}
+
+
+% \begin{thebibliography}{99}
+% \bibitem{ly}李扬. 新一代智能终端——可穿戴设备[J]. 高科技与产业化,2013,10:82-85.
+% \bibitem{tx}Tao Xie and Dengguo Feng. How To Find Weak Input Differences For MD5 Collision Attacks. 30 May 2009.
+
+
+% \end{thebibliography}
+
+% ——————————————————————————————————————————————
+% 以下是论文附录，在appendix子文件下
+
+%%%%%%%%%%   附录   %%%%%%%%%%
+
+\include{appendix/paper}
+
+%\include{appendix/acknowledgements}
+
+% % 重新设置想要的chapter格式
+% \titleformat{\chapter}{\raggedright\sihao\hei}{\chaptername}{2em}{}
+
+\clearpage
+
+% 结束中文字体使用
+\end{CJK*}
+
+% 结束全文
+\end{document}
