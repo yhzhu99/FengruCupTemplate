@@ -1,0 +1,65 @@
+% !Mode:: "TeX:UTF-8"
+%!TEX root = ../main.tex
+
+% \markboth{附\quad 录}{附\quad 录}
+% \addcontentsline{toc}{chapter}{附\quad 录} % 添加到目录中
+
+\chapter*{源程序}
+\lstset{language=C}
+\begin{lstlisting}
+
+#include<stdio.h>
+#include <stdlib.h>
+int main()
+{
+	FILE *fp1;
+	double shuju[180+1][367+1]={0.0};
+	double t=0.0;
+	double max[180+1]={0};
+	int start[180+1]={0};
+	int end[180+1]={0};
+	FILE *fp2;
+	fp2=fopen("C:\\Users\\Dell-pc\\Desktop\\正方形2222.xls","w");
+	fprintf(fp2,"shujuzushu\t max\n");
+	int i,j=0;
+	if(NULL == (fp1 = fopen("C:\\Users\\Dell-pc\\Desktop\\1.txt", "r")))  
+    {  
+        printf("error\n");  
+        exit(1);  
+    }
+    for(i=1;i<=180;i++)
+	{
+	 for(j=1;j<=367;j++)
+		{
+			fscanf(fp1,"%lf",&shuju[i][j]);
+			//printf("%lf\n",shuju[i][j]);
+		}
+		fscanf(fp1,"\n");
+	}
+	 fclose(fp1);
+	
+	
+	 for(i=1;i<=180;i++)
+	{
+	
+		 for(j=1;j<=367;j++)
+		{
+			
+			
+			if(shuju[i][j]==0.0&&shuju[i][j+1]!=0.0)
+			{
+				start[i]=j+1;
+			  }
+			  if(shuju[i][j]!=0.0&&shuju[i][j+1]==0.0)
+			{
+				end[i]=j;
+			  }
+		}
+	}
+	for(i=1;i<=180;i++)
+	{
+		max[i]=(start[i]+end[i])/2;
+		fprintf(fp2,"%d\t   %lf\n",i,max[i]);
+	}
+ }
+\end{lstlisting}
