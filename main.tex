@@ -7,6 +7,18 @@
 % 定义本文所使用宏包
 \input{setup/package}
 
+\usepackage{amsmath}
+\usepackage{url}
+\usepackage{float}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{booktabs} 
+\usepackage{array}
+\newcommand{\td}[1]{\todo[inline]{{\textbf{TODO:} \emph{#1}}}}
+\newcommand{\secref}[1]{第~\ref{#1}~节}
+\newcommand{\figref}[1]{图~\ref{#1}}
+\newcommand{\tabref}[1]{表~\ref{#1}}
+
 % 定义所有的.eps/.pdf图片文件在figures子目录下
 \graphicspath{{figure/}}
 
