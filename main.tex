@@ -14,12 +14,15 @@
 \usepackage{subfigure}
 \usepackage{booktabs} 
 \usepackage{array}
-\newcommand{\td}[1]{\todo[inline]{{\textbf{TODO:} \emph{#1}}}}
-\newcommand{\secref}[1]{第~\ref{#1}~节}
-\newcommand{\figref}[1]{图~\ref{#1}}
-\newcommand{\tabref}[1]{表~\ref{#1}}
+\usepackage{listings}
 
-% 定义所有的.eps/.pdf图片文件在figures子目录下
+\newcommand{\chref}[1]{第~\ref{#1}~章}
+\newcommand{\secref}[1]{第~\ref{#1}~节}
+\newcommand{\figref}[1]{图~\ref{#1}~}
+\newcommand{\tabref}[1]{表~\ref{#1}~}
+\newcommand{\equaref}[1]{公式~\eqref{#1}~}
+
+% 定义所有的.eps/.pdf图片文件在figure子目录下
 \graphicspath{{figure/}}
 
 \begin{document}
