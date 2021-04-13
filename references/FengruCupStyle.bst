@@ -1,20 +1,3 @@
-%% TJUThesis.bst
-%%
-%% 天津大学学位论文参考文献 BibTeX 样式  
-%% 
-%% 项目主页：http://code.google.com/p/buptthesis/
-%% 
-%% 本样式基于 IEEEtran 和 ThuThesis，参考北京邮电大学的.bst文件生成，满足天津大学学位论文格式要求.
-
-%% 感谢作者：
-%% 张煜 (email:dazzlezhang@gmail.com) 
-%%
-%% 更新记录:
-%% $LastChangedBy$
-%% $LastChangedDate$
-%% $LastChangedRevision$
-
-%% 一些设置的缺省值
 % 英文姓名排版格式字符串, 按<last name全称>~<first name首字母><, Jr.>格式
 FUNCTION {default.name.format.string} {"{vv~}{ll}{~f}{, Jj}"}
 
