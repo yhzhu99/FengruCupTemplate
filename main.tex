@@ -1,26 +1,10 @@
 \def\usewhat{pdflatex}
 
-% book作为文档类
 % 插入空白页可以设置openright
 \documentclass[12pt,openany,oneside]{book}
 
 % 定义本文所使用宏包
 \input{setup/package}
-
-\usepackage{amsmath}
-\usepackage{url}
-\usepackage{float}
-\usepackage{graphicx}
-\usepackage{subfigure}
-\usepackage{booktabs} 
-\usepackage{array}
-\usepackage{listings}
-
-\newcommand{\chref}[1]{第~\ref{#1}~章}
-\newcommand{\secref}[1]{第~\ref{#1}~节}
-\newcommand{\figref}[1]{图~\ref{#1}~}
-\newcommand{\tabref}[1]{表~\ref{#1}~}
-\newcommand{\equaref}[1]{公式~\eqref{#1}~}
 
 % 定义所有的.eps/.pdf图片文件在figure子目录下
 \graphicspath{{figure/}}
@@ -92,45 +76,21 @@
 \include{body/ch03}
 
 %%%%%%%%%%  参考文献  %%%%%%%%%%
-% \lhead{}
-% \rhead{}
-% \chead{\song\wuhao 北京航空航天大学第三十一届“冯如杯”学生学术科技作品竞赛参赛作品} % 覆盖设置页眉内容
-% \defaultfont
 \bibliographystyle{references/FengrubeiStyle}
-%\phantomsection
 \markboth{参考文献}{参考文献}
-\addcontentsline{toc}{chapter}{参考文献}       % 参考文献加入到中文目录
-
-
-\nocite{*}                                     
-% 若将此命令屏蔽掉，则未引用的文献不会出现在文后的参考文献中
-
-%启用此命令：使用.bib文件作为文献来源
+\addcontentsline{toc}{chapter}{参考文献}
+% \nocite{*}
 \bibliography{references/ref}
 
 
-% \begin{thebibliography}{99}
-% \bibitem{ly}李扬. 新一代智能终端——可穿戴设备[J]. 高科技与产业化,2013,10:82-85.
-% \bibitem{tx}Tao Xie and Dengguo Feng. How To Find Weak Input Differences For MD5 Collision Attacks. 30 May 2009.
-
-
-% \end{thebibliography}
-
-% ——————————————————————————————————————————————
-% 以下是论文附录，在appendix子文件下
-
 %%%%%%%%%%   附录   %%%%%%%%%%
 
-\include{appendix/material}
-\include{appendix/code}
+% \include{appendix/material}
+% \include{appendix/code}
 
 % % 重新设置想要的chapter格式
 % \titleformat{\chapter}{\raggedright\sihao\hei}{\chaptername}{2em}{}
 
 \clearpage
-
-% 结束中文字体使用
 \end{CJK*}
-
-% 结束全文
 \end{document}
