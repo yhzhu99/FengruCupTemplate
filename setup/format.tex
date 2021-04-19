@@ -73,7 +73,7 @@
 
 %%%%%%%%%%%%% Contents 目录 %%%%%%%%%%%%%%%%%
 
-\renewcommand{\contentsname}{目\qquad 录}
+\renewcommand{\contentsname}{目录}
 
 % 控制目录深度，改为1
 \setcounter{tocdepth}{1}
@@ -314,8 +314,8 @@
 
 %中文摘要格式
 \clearpage
-\markboth{摘~要}{摘~要}
-\pdfbookmark[0]{摘~~要}{cabstract}
+\markboth{摘要}{摘要}
+\pdfbookmark[0]{摘要}{cabstract}
 
 % 摘要不加到目录中
 %\addcontentsline{toc}{chapter}{摘要}
@@ -338,14 +338,15 @@
 \@cabstract
 \vspace{\baselineskip}
 
-\hangafter=1\hangindent=52.3pt\noindent
+%\hangafter=1\hangindent=52.3pt\noindent
+\hangafter=1\hangindent=52.3pt
 {\hei\xiaosi 关键词：} \@ckeywords
 %\thispagestyle{empty}
 
 % 英文摘要格式
 \clearpage
- \markboth{ABSTRACT}{ABSTRACT}
- \pdfbookmark[0]{ABSTRACT}{eabstract}
+ \markboth{Abstract}{Abstract}
+ \pdfbookmark[0]{Abstract}{eabstract}
 
  % 摘要不加到目录中
  %\addcontentsline{toc}{chapter}{ABSTRACT}
@@ -354,7 +355,8 @@
 
 % ABSTRACT三号居中
  \begin{center}
- \sanhao{\bf{Abstract}}
+ % \sanhao{\bf{Abstract}}
+ \sanhao{Abstract}
  \end{center}
 \vspace{\baselineskip}
 
@@ -362,7 +364,8 @@
 \@eabstract
 \vspace{\baselineskip}
 
-\hangafter=1\hangindent=60pt\noindent
+% \hangafter=1\hangindent=60pt\noindent
+\hangafter=1\hangindent=60pt
 {\textbf{Keywords:}} \@ekeywords
 \thispagestyle{plain}
 
