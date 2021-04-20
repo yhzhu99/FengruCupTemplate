@@ -1,3 +1,16 @@
+%%%%%%%%%%%%%%%%% 图片浮动设置 %%%%%%%%%%%%%%%%%
+\setcounter{topnumber}{2}
+\setcounter{bottomnumber}{2}
+\setcounter{totalnumber}{4}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\bottomfraction}{0.85}
+\renewcommand{\textfraction}{0.15}
+\renewcommand{\floatpagefraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\setlength{\floatsep}{5pt plus 2pt minus 2pt}
+\setlength{\textfloatsep}{5pt plus 2pt minus 2pt}
+\setlength{\intextsep}{5pt plus 2pt minus 2pt}
+
 %%%%%%%%%%%%%%%%% Fonts Definition and Basics %%%%%%%%%%%%%%%%%
 \newcommand{\song}{\CJKfamily{song}}    % 宋体
 \newcommand{\fs}{\CJKfamily{fs}}        % 仿宋体
@@ -332,12 +345,12 @@
 \xiaosan\hei 摘要
 \end{center}
 
-\vspace{\baselineskip} % 新增摘要后空行
+%\vspace{\baselineskip} % 新增摘要后空行
 
 % 插入中文摘要
 \song\defaultfont
 \@cabstract
-\vspace{\baselineskip}
+% \vspace{\baselineskip}
 
 %\hangafter=1\hangindent=52.3pt\noindent
 \hangafter=1\hangindent=52.3pt
@@ -359,11 +372,11 @@
  % \sanhao{\bf{Abstract}}
  \sanhao{Abstract}
  \end{center}
-\vspace{\baselineskip}
+% \vspace{\baselineskip}
 
 % 插入英文摘要
 \@eabstract
-\vspace{\baselineskip}
+% \vspace{\baselineskip}
 
 % \hangafter=1\hangindent=60pt\noindent
 \hangafter=1\hangindent=60pt
