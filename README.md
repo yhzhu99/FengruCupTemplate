@@ -2,9 +2,18 @@
 
 北航“冯如杯”论文模板 (2021 年)
 
+## 相关配置
+
 编译的 recipe 为：pdflatex -> bibtex -> pdflatex\*2
 
-封面和摘要页的字体有问题。可将从 Word 生成的 pdf 替换掉从 LaTex 生成的封面和摘要页。
+我使用的 LaTex 环境为：TexLive 2020
+
+## 注意事项
+
+- 封面前 2 页中的字体有问题。可通过将从 Word 生成的 pdf 替换掉从 LaTex 生成的封面和摘要页来解决。
+- 此外，图片和表格标题的**加粗**格式需要手动从生成的 pdf 中进行修改。
+
+## 附：VS Code 设置
 
 参考 VS Code 中 LaTex Workshop 的配置：
 
