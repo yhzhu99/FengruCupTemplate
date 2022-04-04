@@ -19,7 +19,7 @@
 参考 VS Code 中 LaTex Workshop 的配置：
 
 ```json
-"latex-workshop.latex.autoBuild.run": "never",
+{"latex-workshop.latex.autoBuild.run": "never",
   "latex-workshop.showContextMenu": true,
   "latex-workshop.intellisense.package.enabled": true,
   "latex-workshop.message.error.show": false,
@@ -112,5 +112,5 @@
   ],
   "latex-workshop.latex.autoClean.run": "onFailed",
   "latex-workshop.latex.recipe.default": "lastUsed",
-  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click",
+  "latex-workshop.view.pdf.internal.synctex.keybinding": "double-click"}
 ```
